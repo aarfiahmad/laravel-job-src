@@ -95,7 +95,7 @@ class ListingController extends Controller
         return redirect('/')->with('message', 'Listing deleted successfully');
     }
 
-    // Manage Listings
+    // Manage Listings -->Man age function to display all products with admin controls
     public function manage() {
         return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }

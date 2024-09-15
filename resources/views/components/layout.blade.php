@@ -22,7 +22,7 @@
         },
       }
   </script>
-  <title>LaraGigs | Find Laravel Jobs & Projects</title>
+  <title>Job Search  Portal | Find Tech Jobs & Projects</title>
 </head>
 
 <body class="mb-48">
@@ -38,6 +38,8 @@
       <li>
         <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage Listings</a>
       </li>
+        
+
       <li>
         <form class="inline" method="POST" action="/logout">
           @csrf
@@ -48,10 +50,15 @@
       </li>
       @else
       <li>
-        <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
+        <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus text-info"></i> Register</a>
       </li>
       <li>
         <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+      </li>
+
+      <li>         <a href="/listings/create" class="hover:text-laravel">
+                     <i class="fas fa-paper-plane"></i> Post
+               </a>
       </li>
       @endauth
     </ul>
@@ -60,12 +67,25 @@
   <main>
     {{$slot}}
   </main>
+
   <footer
+  class="fixed top-0 left-0 w-full flex items-center justify-start font-bold  text-white h-24 mt-24 opacity-90 md:justify-center">
+  {{-- <p class="ml-2">Copyright &copy; 2024, All Rights reserved</p> --}}
+
+  <a href="/listings/create" class="absolute top-0 right-10 bg-black text-white py-2 px-5">Post Job</a>
+</footer>
+
+
+
+
+
+  
+  {{-- <footer
     class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
-    <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
+    <p class="ml-2">Copyright &copy; 2024, All Rights reserved</p>
 
     <a href="/listings/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Post Job</a>
-  </footer>
+  </footer> --}}
 
   <x-flash-message />
 </body>

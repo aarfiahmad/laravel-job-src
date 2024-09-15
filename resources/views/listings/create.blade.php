@@ -1,8 +1,8 @@
 <x-layout>
   <x-card class="p-10 max-w-lg mx-auto mt-24">
     <header class="text-center">
-      <h2 class="text-2xl font-bold uppercase mb-1">Create a Gig</h2>
-      <p class="mb-4">Post a gig to find a developer</p>
+      <h2 class="text-2xl font-bold uppercase mb-1">Create a Job</h2>
+      <p class="mb-4">Post a <b> find <b> to find a developer</p>
     </header>
 
     <form method="POST" action="/listings" enctype="multipart/form-data">
@@ -78,6 +78,14 @@
         </label>
         <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo" />
 
+           
+        {{-- <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          <input type="file" name="file">
+          {{-- <button type="submit">Upload</button> --}}
+      {{-- </form>  --}}
+
+
         @error('logo')
         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
         @enderror
@@ -100,7 +108,7 @@
           Create Gig
         </button>
 
-        <a href="/" class="text-black ml-4"> Back </a>
+        <a href="/" class="text-black ml-4 text-info "> Back </a>
       </div>
     </form>
   </x-card>
